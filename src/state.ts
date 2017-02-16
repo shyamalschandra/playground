@@ -128,7 +128,9 @@ export class State {
     {name: "sinY", type: Type.BOOLEAN},
     {name: "collectStats", type: Type.BOOLEAN},
     {name: "tutorial", type: Type.STRING},
-    {name: "problem", type: Type.OBJECT, keyMap: problems}
+    {name: "problem", type: Type.OBJECT, keyMap: problems},
+    {name: "initZero", type: Type.BOOLEAN},
+    {name: "hideText", type: Type.BOOLEAN}
   ];
 
   [key: string]: any;
@@ -143,6 +145,8 @@ export class State {
   activation = nn.Activations.TANH;
   regularization: nn.RegularizationFunction = null;
   problem = Problem.CLASSIFICATION;
+  initZero = false;
+  hideText = false;
   collectStats = false;
   numHiddenLayers = 1;
   hiddenLayerControls: any[] = [];
